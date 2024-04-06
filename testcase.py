@@ -3,10 +3,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
+import random 
+import string
 
-
+res = ''.join(random.choices(string.ascii_uppercase +
+                             string.digits, k=10000))
 # URL of your webpage
-URL = 'https://priyanka-001.github.io/workshop_website/?'
+URL = 'https://priyanka-001.github.io/workshop_website/?' + str(res)
 
 # Initialize Chrome WebDriver
 #driver = webdriver.Chrome() in this chrome opens what we are doing is opening it in backend
