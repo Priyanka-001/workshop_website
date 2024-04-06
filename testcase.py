@@ -34,15 +34,18 @@ try:
 
     # If the element is found, print success message
     print("Test Passed: Found h1 tag containing 'Magic Website'")
+    # Take a screenshot
+    timestamp = time.strftime("%Y%m%d-%H%M%S")
+    screenshot_file = f"screenshot_{timestamp}.png"
+    driver.save_screenshot(screenshot_file)
+    
 except Exception as e:
     # If the element is not found, print failure message
     print("Test Failed:", e)
     raise e #so that it doesn't deploy
+
+
 finally:
     # Close the WebDriver
     driver.quit()
     
-# Take a screenshot
-timestamp = time.strftime("%Y%m%d-%H%M%S")
-screenshot_file = f"screenshot_{timestamp}.png"
-driver.save_screenshot(screenshot_file)
