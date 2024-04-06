@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 import random 
 import string
+import time
 
 res = ''.join(random.choices(string.ascii_uppercase +
                              string.digits, k=10))
@@ -40,3 +41,8 @@ except Exception as e:
 finally:
     # Close the WebDriver
     driver.quit()
+    
+# Take a screenshot
+timestamp = time.strftime("%Y%m%d-%H%M%S")
+screenshot_file = f"screenshot_{timestamp}.png"
+driver.save_screenshot(screenshot_file)
