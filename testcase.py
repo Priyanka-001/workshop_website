@@ -11,7 +11,7 @@ URL = 'https://priyanka-001.github.io/workshop_website/'
 #driver = webdriver.Chrome() in this chrome opens what we are doing is opening it in backend
 #"C:\Users\priya\OneDrive\Desktop\chromedriver.exe"
 service = Service(
-    executable_path='C:/Users/priya/OneDrive/Desktop/chromedriver.exe')
+    executable_path='/usr/local/bin/chromedriver')
 options = webdriver.ChromeOptions()
 options.add_argument("--headless")
 options.add_argument('--no-sandbox')
