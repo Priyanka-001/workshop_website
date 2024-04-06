@@ -7,7 +7,7 @@ import random
 import string
 
 res = ''.join(random.choices(string.ascii_uppercase +
-                             string.digits, k=10000))
+                             string.digits, k=10))
 # URL of your webpage
 URL = 'https://priyanka-001.github.io/workshop_website/?' + str(res)
 
