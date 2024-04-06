@@ -3,9 +3,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
+import random
+import string
 
 # URL of your webpage
-URL = 'https://priyanka-001.github.io/workshop_website/'
+URL = 'https://priyanka-001.github.io/workshop_website/?' + ''.join(random.choices(string.ascii_uppercase + string.digits, k=1000000))
 
 # Initialize Chrome WebDriver
 #driver = webdriver.Chrome() in this chrome opens what we are doing is opening it in backend
@@ -32,6 +34,7 @@ try:
 except Exception as e:
     # If the element is not found, print failure message
     print("Test Failed:", e)
+    raise e #so that it doesn't deploy
 finally:
     # Close the WebDriver
     driver.quit()
